@@ -16,11 +16,11 @@ public:
 
    void swap(int i, int largest);
 
-   void initializeMaxHeap(std::vector<T> v);
+   void initializeMaxHeap(const std::vector<T>& v);
    void maxHeapify(int i);
    void buildMaxHeap();
 
-   void heapSort();
+   void heapsort();
 
    static int parent(const int index);
    static int left(const int index);
