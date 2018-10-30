@@ -76,6 +76,14 @@ void dictionary::selectionSort()
 	} // End for
 } // End selectionSort()
 
+void dictionary::heapsort()
+{
+   heap<std::string> h;
+
+   // h.initializeMaxHeap(this->words);
+   // this->words = h.heapsort();
+}
+
 void dictionary::quickSort(const int& left, const int& right)
 {
 	if (left < right)

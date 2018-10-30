@@ -12,6 +12,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include "heap.h"
 
  // Class declaration
 class dictionary
@@ -34,6 +35,8 @@ public:
 	// Sort the dictionary in a lexicographic manner.
 	void selectionSort();
 	void quickSort() { quickSort(0, this->words.size() - 1); }
+
+   void heapsort();
 
 	// Overloaded output operator to print contents of dictionary
 	friend std::ostream& operator<<(std::ostream& os,
