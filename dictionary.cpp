@@ -76,6 +76,39 @@ void dictionary::selectionSort()
 	} // End for
 } // End selectionSort()
 
+void dictionary::quickSort(const int& left, const int& right)
+{
+	if (left < right)
+	{
+		int s(partition(left, right));
+		quickSort(left, s - 1);
+		quickSort(s + 1, right);
+	}
+}
+
+int dictionary::partition(const int& left, const int& right)
+{
+	std::string pivot(this->words.at(right));
+	int i(left - 1);
+
+	for (int j = left; j < right; j++)
+	{
+		if (this->words.at(j) <= pivot)
+		{
+			i++;
+
+			std::string tmp(this->words.at(i));
+			this->words.at(i) = this->words.at(j);
+			this->words.at(j) = tmp;
+		}
+	}
+
+	this->words.at(right) = this->words.at(i + 1);
+	this->words.at(i + 1) = pivot;
+
+	return i + 1;
+}
+
 // Search for the given string in the dictionary. Return -1 if not found and
 //  the index of the item in the dictionary if there was a match
 // Utilizes the binary search method with a sorted vector

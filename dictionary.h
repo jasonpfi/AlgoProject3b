@@ -31,8 +31,9 @@ public:
 	// string target: String to be searched for in the vector
 	int binarySearch(const std::string& target) const;
 
-	// Sort the dictionary in a lexicographic manner. Utilizes selection sort
+	// Sort the dictionary in a lexicographic manner.
 	void selectionSort();
+	void quickSort() { quickSort(0, this->words.size() - 1); }
 
 	// Overloaded output operator to print contents of dictionary
 	friend std::ostream& operator<<(std::ostream& os,
@@ -49,5 +50,9 @@ private:
 	// int least: index of element with the smallest value in the rest of the
 	//            vector
 	void swap(int i, int least);
+
+	// private quicksort method that is called recursivly
+	void quickSort(const int& left, const int& right);
+	int partition(const int& left, const int& right);
 };
 

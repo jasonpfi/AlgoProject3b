@@ -26,10 +26,37 @@ int main()
 	std::ifstream wordFile("data/dictionary.txt");
 	dictionary wordList(wordFile);
 	wordFile.close();
+	
+	while (true)
+	{
+		std::cout << "Choose sorting method:\n"
+			<< "Selection Sort (0)\n"
+			<< "Quick Sort (1)\n"
+			<< "Heap Sort (2)\nEnter method number: ";
 
-	// sort dictionary
-	std::cout << "Sorting word list...";
-	wordList.selectionSort();
+		int method = 0;
+		std::cin >> method;
+
+		// sort dictionary
+		std::cout << "Sorting word list...";
+		
+		switch (method)
+		{
+		case 0:
+			wordList.selectionSort();
+			break;
+		case 1:
+			wordList.quickSort();
+			break;
+		case 2:
+			//TODO: add heap sort method
+			break;
+		default:
+			std::cout << "\n\nInvalid sorting option.\n";
+			continue;
+		}
+		break;
+	}
 	std::cout << "Done" << std::endl;
 
 	std::cout << "Enter file name that can be found in the data folder: ";
