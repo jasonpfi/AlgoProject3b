@@ -10,6 +10,7 @@
 #include <fstream>
 #include <string>
 #include "grid.h"
+#include "heap.h"
 #include "dictionary.h"
 
 void findMatches(const grid& g, const dictionary& d);

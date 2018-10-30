@@ -7,23 +7,27 @@ class heap{
 public:
 
    heap(std::vector<T> n):
-      nodes(n) {}
+      nodes(n), heapSize(n.size()) {}
 
    heap ():
-      nodes(std::vector<T>()) {}
+      nodes(std::vector<T>()), heapSize(0) {}
 
-   T parent(int index);
-   T left(int index);
-   T right(int index);
-   T getItem(int n);
+   T& getItem(const int n);
 
-   void initializeMaxHeap();
-   void maxHeapify();
+   void swap(int i, int largest);
+
+   void initializeMaxHeap(std::vector<T> v);
+   void maxHeapify(int i);
    void buildMaxHeap();
 
    void heapSort();
 
+   static int parent(const int index);
+   static int left(const int index);
+   static int right(const int index);
+
 private:
 
    std::vector<T> nodes;
-}
+   int heapSize;
+};
