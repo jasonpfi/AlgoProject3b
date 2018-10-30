@@ -76,6 +76,14 @@ void dictionary::selectionSort()
 	} // End for
 } // End selectionSort()
 
+void dictionary::heapsort()
+{
+   heap<std::string> h;
+
+   // h.initializeMaxHeap(this->words);
+   // this->words = h.heapsort();
+}
+
 // Search for the given string in the dictionary. Return -1 if not found and
 //  the index of the item in the dictionary if there was a match
 // Utilizes the binary search method with a sorted vector

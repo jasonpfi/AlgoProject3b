@@ -69,14 +69,14 @@ void heap<T>::buildMaxHeap()
 }
 
 template <typename T>
-void heap<T>::initializeMaxHeap(const std::vector<T>& v)
+void heap<T>::initializeMaxHeap(std::vector<T> v)
 {
    this->nodes = v;
    this->heapSize = v.size();
 }
 
 template <typename T>
-void heap<T>::heapsort()
+std::vector<T> heap<T>::heapsort()
 {
    this->buildMaxHeap();
 
@@ -86,6 +86,8 @@ void heap<T>::heapsort()
       this->heapSize--;
       this->maxHeapify(1);
    }
+
+   return this->nodes;
 }
 
 
