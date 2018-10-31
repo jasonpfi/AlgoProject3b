@@ -78,10 +78,11 @@ void dictionary::selectionSort()
 
 void dictionary::heapsort()
 {
+   std::cout << "test d0";
    heap<std::string> h;
-
-   // h.initializeMaxHeap(this->words);
-   // this->words = h.heapsort();
+   std::cout << "test d1";
+   h.initializeMaxHeap(this->words);
+   this->words = h.heapsort();
 }
 
 void dictionary::quickSort(const int& left, const int& right)

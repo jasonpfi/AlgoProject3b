@@ -25,7 +25,7 @@ int main()
 	std::ifstream wordFile("data/dictionary.txt");
 	dictionary wordList(wordFile);
 	wordFile.close();
-	
+
 	while (true)
 	{
 		std::cout << "Choose sorting method:\n"
@@ -38,7 +38,7 @@ int main()
 
 		// sort dictionary
 		std::cout << "Sorting word list...";
-		
+
 		switch (method)
 		{
 		case 0:
@@ -48,7 +48,7 @@ int main()
 			wordList.quickSort();
 			break;
 		case 2:
-			//TODO: add heap sort method
+			wordList.heapsort();
 			break;
 		default:
 			std::cout << "\n\nInvalid sorting option.\n";
