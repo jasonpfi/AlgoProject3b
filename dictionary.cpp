@@ -78,9 +78,7 @@ void dictionary::selectionSort()
 
 void dictionary::heapsort()
 {
-   std::cout << "test d0";
    heap<std::string> h;
-   std::cout << "test d1";
    h.initializeMaxHeap(this->words);
    this->words = h.heapsort();
 }
