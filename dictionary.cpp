@@ -76,6 +76,9 @@ void dictionary::selectionSort()
 	} // End for
 } // End selectionSort()
 
+// Sorts the dictionary by utilizing the heap class. Copies the words from
+//  the dictionary into the heap, sorts the words, then copies the words
+//  back into the dictionary (as specified by the project description)
 void dictionary::heapsort()
 {
    heap<std::string> h;
