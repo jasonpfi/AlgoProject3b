@@ -36,6 +36,7 @@ public:
 	void selectionSort();
 	void quickSort() { quickSort(0, this->words.size() - 1); }
 
+   // Sorts the dictionary by utilizing the heap class
    void heapsort();
 
 	// Overloaded output operator to print contents of dictionary

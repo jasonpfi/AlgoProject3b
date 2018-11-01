@@ -154,7 +154,6 @@
     <ClCompile Include="dictionary.cpp" />
     <ClCompile Include="fitsmu-3b.cpp" />
     <ClCompile Include="grid.cpp" />
-    <ClCompile Include="heap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dictionary.h" />
