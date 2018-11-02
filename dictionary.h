@@ -36,8 +36,8 @@ public:
 	void selectionSort();
 	void quickSort() { quickSort(0, this->words.size() - 1); }
 
-   // Sorts the dictionary by utilizing the heap class
-   void heapsort();
+	// Sorts the dictionary by utilizing the heap class
+	void heapsort();
 
 	// Overloaded output operator to print contents of dictionary
 	friend std::ostream& operator<<(std::ostream& os,
@@ -53,7 +53,7 @@ private:
 	// int i: current index of first loop
 	// int least: index of element with the smallest value in the rest of the
 	//            vector
-	void swap(int i, int least);
+	void swap(const int& i, const int& least);
 
 	// private quicksort method that is called recursivly
 	void quickSort(const int& left, const int& right);

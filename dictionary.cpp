@@ -42,7 +42,7 @@ std::ostream& operator<<(std::ostream& os, const dictionary& dict)
 // int i: current index of first loop
 // int least: index of element with the smallest value in the rest of the
 //            vector
-void dictionary::swap(int i, int least)
+void dictionary::swap(const int& i, const int& least)
 {
 	// Temporary element value
 	std::string tmp(this->words.at(i));
@@ -86,6 +86,7 @@ void dictionary::heapsort()
    this->words = h.heapsort();
 }
 
+// Sorts the dictionary utilizing the quicksort algorithm
 void dictionary::quickSort(const int& left, const int& right)
 {
 	if (left < right)
@@ -96,11 +97,14 @@ void dictionary::quickSort(const int& left, const int& right)
 	}
 }
 
+// helper function to quicksort. Puts the pivot in the final position
 int dictionary::partition(const int& left, const int& right)
 {
+	// select pivot
 	std::string pivot(this->words.at(right));
 	int i(left - 1);
 
+	// sort all other elements based on relation to pivot
 	for (int j = left; j < right; j++)
 	{
 		if (this->words.at(j) <= pivot)
@@ -113,11 +117,13 @@ int dictionary::partition(const int& left, const int& right)
 		}
 	}
 
+	// put pivot in final position
 	this->words.at(right) = this->words.at(i + 1);
 	this->words.at(i + 1) = pivot;
 
+	// return position of pivot
 	return i + 1;
-}
+} // end partition
 
 // Search for the given string in the dictionary. Return -1 if not found and
 //  the index of the item in the dictionary if there was a match
@@ -158,4 +164,4 @@ int dictionary::binarySearch(const std::string& target) const
 
 	// Target Not found
 	return -1;
-}
+} // end binarySearch

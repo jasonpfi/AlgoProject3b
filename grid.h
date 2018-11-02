@@ -31,8 +31,7 @@ public:
 		return mat[i][j];
 	};
 
-	// TODO: Turn this into findMatches()
-	std::vector<std::string> readGrid()const;
+	std::vector<std::string> readGrid() const;
 
 private:
 

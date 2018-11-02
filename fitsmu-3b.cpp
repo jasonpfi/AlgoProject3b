@@ -23,6 +23,7 @@ int main()
 
 	//// Load dictionary
 	std::ifstream wordFile("data/dictionary.txt");
+	if (!wordFile) return 1; // error reading file
 	dictionary wordList(wordFile);
 	wordFile.close();
 
@@ -39,6 +40,7 @@ int main()
 		// sort dictionary
 		std::cout << "Sorting word list...";
 
+		// switch on sorting algorithm
 		switch (method)
 		{
 		case 0:
@@ -63,6 +65,7 @@ int main()
 	std::cin >> fileName;
 
 	std::ifstream f(("data/" + fileName).c_str());
+	if (!f) return 1; // error reading file
 
 	// Instantiate grid object
 	grid g(f);
